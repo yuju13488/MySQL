@@ -1,0 +1,25 @@
+CREATE TABLE food(
+	id CHAR(5) PRIMARY KEY,
+    `name` VARCHAR(30) NOT NULL,
+    expiredate DATETIME NOT NULL,
+    placeid CHAR(2) NOT NULL,
+    price INT UNSIGNED NOT NULL,
+    catalog VARCHAR(20) NOT NULL
+    );
+    
+CREATE TABLE place(
+	id CHAR(2) PRIMARY KEY,
+    `name` VARCHAR(20) NOT NULL
+    );
+    
+CREATE TABLE food1 LIKE food;
+DESC food1;
+ALTER TABLE food1 ADD composition VARCHAR(20);
+ALTER TABLE food1 ADD x CHAR(4) FIRST;
+ALTER TABLE food1 ADD y INT AFTER x;
+ALTER TABLE food1 MODIFY composition VARCHAR(30) AFTER x;
+ALTER TABLE food1 CHANGE composition z VARCHAR(40); 
+ALTER TABLE food1 DROP x;
+ALTER TABLE food1 RENAME food2;
+DESC food2;
+DROP TABLE food2;
